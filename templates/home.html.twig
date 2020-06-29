@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="section" style="background-color:#006494; height:1040px; padding-top:1px;"id="about-me">
+	<div class="container" >
+		<div class="row">
+		{% for pro in profil %}
+			<div class="col-12">
+
+				<div class="jumbotron"  style="position: relative; margin-top: 313px; width: 100%;"}>
+					<img class="profil-img" src="{{pro.img}}" align=left >
+					<h1 class="profil-nom">{{pro.prenom}}</h1>
+					<h3 class="profil-titre">{{pro.titre}}<h3>
+					<p class="profil-contenu">{{pro.contenu | raw}}</p>
+				</div>
+		{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section" style="background-color:#003554; height:1040px; padding-top:1px;" id="skills">
+	<div class="container" style="position:relative; margin-top:55px;" >
+		<div class="row" >
+			<div class="col-4"  style="text-align:center;" ><h2  style="color:#fffcf2;">Compétences</h2></div>
+		</div>
+		<hr class="my-4-comp">
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			{% for competence in competences %}
+				<div class="col-md-12 col-xl-4">
+					<div class="card text-white bg-primary mb-3" >
+						<div class="card-body">
+							<h4 class="card-title mb-4 mt-3 text-center">Back-end</h4>
+							<hr class="my-1">
+							<p class="card-text" style="text-align:center;">{{competence.backend}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-xl-4">
+					<div class="card text-white bg-primary mb-3" >
+						<div class="card-body">
+							<h4 class="card-title mb-4 mt-3" >Front-end</h4>
+							<hr class="my-1">
+							<p class="card-text" style="text-align:center;">{{competence.frontend}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-xl-4">
+					<div class="card text-white bg-primary mb-3">
+						<div class="card-body">
+							<h4 class="card-title mb-4 mt-3" style="text-align:center;">SGBD</h4>
+							<hr class="my-1" style="border: 1px solid white;">
+							<p class="card-text" style="text-align:center;">{{competence.sgbd}}</p>
+						</div>
+					</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="section"  id="formations" style="background-color: #006494;height: 1240px;padding-top: 1px;">
+	<div class="container" style="position:relative; margin-top:55px;">
+		<div class="row" >
+			<div class="col-4" style="text-align:center"><h2>Formations</h2></div>
+		</div>
+		<hr class="my-4-comp" style="border-top: 3px solid black;">
+	</div>
+	<div class="container" style="text-align:center;">
+		{% for formation in form %}
+			{% include 'user/_formation.html.twig'%}
+		{% endfor %}
+	</div>
+</div>
+
+
+<div class="section" style="background-color: #003554; height:2320px; padding-top:1px;" id="exp">
+	<div class="container" style="position:relative; margin-top:55px;">
+		<div class="row" >
+			<div class="col-4" style="text-align:center"><h2>Expériences</h2></div>
+		</div>
+		<hr class="my-4-comp"style="border-top: 3px solid black;">
+	</div>
+    
+	<section id="cd-timeline" class="cd-container">
+		{% for exps in exp %}
+			{% include '_home.html.twig' %}
+		{% endfor %}
+	</section> <!-- cd-timeline -->
+</div>
+
+<div class="section" style="background-color:#006494; height:900px; padding-top:1px;" id="interets">
+	<div class="container" style="position:relative; margin-top:55px;">
+		<div class="row" style="margin-top:55px;" >
+			<div class="col-4" style="text-align:center">
+				<h2>Intérêts</h2>
+			</div>
+		</div>
+		<hr class="my-4-comp"style="border-top: 3px solid black;">
+	</div>
+
+	<div class="container">
+		<div class="row">
+			{% for imgs in img %}
+				{% include 'user/_interets.html.twig' %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+<div class="section" style="background-color: #003554; height:900px; padding-top:1px;" id="contact">
+	<div class="container" style="position:relative; margin-top:55px;">
+		<div class="row" style="margin-top:55px;" >
+			<div class="col-4" style="text-align:center">
+				<h2>Contact</h2>
+			</div>
+		</div>
+		<hr class="my-4-comp"style="border-top: 3px solid black;">
+	</div>
+
+	<div class="container">
+		<div class="row">
+			{% for imgsContact in imgContact %} 
+				{% include 'user/_contact.html.twig' %}
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

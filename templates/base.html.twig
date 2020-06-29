@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}SithWeb{% endblock %}</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/default.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+        <style class="cp-pen-styles">.card 
+        {
+                    display: inline-block;
+                    flex: 1;
+                    position: relative;
+                    min-width: 300px;
+                    height: 10rem;
+                    margin: .1rem;
+                    font-family: 'Lato', sans-serif;
+                    text-align: center;
+                    text-decoration: none;
+                    color: white;
+                    background-color: #3979B7;
+                    overflow: hidden;
+        }</style>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% include 'commons/header.html.twig' %}
+        {% block body %}
+        
+        {% endblock %}
+
+        {% include 'commons/footer.html.twig' %}
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/script.js"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
