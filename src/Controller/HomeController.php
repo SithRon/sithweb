@@ -11,6 +11,7 @@ use App\Repository\CompetencesRepository;
 use App\Repository\ExperiencesRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Profiler\Profiler;
 
 class HomeController extends AbstractController {
 
@@ -36,5 +37,12 @@ class HomeController extends AbstractController {
             'img' => $img,
             'imgContact' => $imgContact,
         ]);
+    }
+
+    public function onProfiler(?Profiler $profiler){
+        if (null !== $profiler) {
+            // if it exists, disable the profiler for this particular controller action
+            $profiler->disable();
+        }
     }
 }
