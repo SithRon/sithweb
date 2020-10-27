@@ -1,0 +1,121 @@
+/* -------------------- */
+/*        MIXINS        */
+/* -------------------- */
+
+/* ------ POSITIONS ------ */
+
+@mixin center-horizontal() {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+@mixin center-vertical() {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin center-both() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@mixin center-both-fixed() {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@mixin center-horizontal-fixed() {
+	position: fixed;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+@mixin transform($transform) {
+	transform: $transform;
+}
+
+@mixin mainTransition() {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+/* ------ MIXINS MEDIA QUERIES ------ */
+
+@mixin mobile {
+	@media (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$small-desktop-width}) {
+		@content;
+	}
+}
+
+@mixin tablet-and-more {
+	@media (min-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+	@media (max-width: #{$small-desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet-landscape {
+	@media (max-width: #{$medium-desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop-and-tablet-landscape {
+	@media (min-width: #{$small-desktop-width}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$medium-desktop-width}) {
+		@content;
+	}
+}
+
+@mixin except_desktop {
+	@media (max-width: #{$small-desktop-width}) {
+		@content;
+	}
+}
+
+@mixin hover-supported {
+	@media not all and (hover: none) {
+		@content;
+	}
+}
+
+@mixin hover-not-supported {
+	@media (hover: none) {
+		@content;
+	}
+}
+
+@mixin print {
+	@media print {
+		@content;
+	}
+}

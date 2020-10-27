@@ -1,0 +1,25 @@
+/* -------------------- */
+/*         STYLE        */
+/* -------------------- */
+
+/* ---------- CONFIG ---------- */
+@import 'config/reset.scss';
+@import 'config/fonts.scss';
+@import 'config/variables.scss';
+@import 'config/mixins.scss';
+
+/* ---------- UTILS ---------- */
+@import 'utils/typography.scss';
+
+/* ---------- LAYOUT ---------- */
+@import 'layout/header.scss';
+@import 'layout/footer.scss';
+
+/* ---------- COMPONENTS ---------- */
+@import 'components/landing-page.scss';
+@import 'components/presentation.scss';
+@import 'components/skills.scss';
+@import 'components/formation.scss';
+@import 'components/experiences.scss';
+@import 'components/hobbies.scss';
+@import 'components/contact.scss';
